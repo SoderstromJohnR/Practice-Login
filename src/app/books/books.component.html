@@ -1,0 +1,13 @@
+<h2>Programming Books List</h2>
+
+<ul *ngIf="isShowing">
+    <ng-container *ngFor="let book of books; let i=index">
+        <li class="book">
+            <p class="sno">{{ i + 1 }}</p>
+            <img [src]="book.image" [alt]="book.name" width="100" />
+            <p class="title">{{ book.name | titlecase }} by {{ book.author | titlecase }}</p>
+            <p class="currency">{{ book.amount | currency }}</p>
+            <button>Add to Cart</button>
+        </li>
+    </ng-container>
+</ul>
