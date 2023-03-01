@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
+import { Book } from '../types/Book';
 
-interface Book {
-  name: string,
-  author: string,
-  image: string,
-  amount: number,
-}
+
 
 @Component({
   selector: 'app-books',
@@ -28,9 +24,15 @@ export class BooksComponent {
     },
   ];
 
+  cart: Book[] = [];
+
   isShowing: boolean = true;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  addToCart(event: Book) {
+    console.log(event.name);
+  }
 }
