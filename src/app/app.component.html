@@ -1,9 +1,11 @@
-<nav class="flex">
+<nav class="flex justify-between p-4 bg-purple-800 text-white">
   <div>
-    <h1>Bookshop</h1>
+    <a routerLink="">Bookshop</a>
   </div>
   <div>
-    <button>My Cart</button>
+    <a routerLink="cart">My Cart</a>
   </div>
 </nav>
-<router-outlet></router-outlet>
+<div class="p-4">
+  <router-outlet></router-outlet>
+</div>
