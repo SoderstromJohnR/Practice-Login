@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginForm } from '../../types/auth';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +11,15 @@ export class LoginComponent {
   form: LoginForm = {
     email: '',
     password: '',
-    confirm_password: '',
   };
 
+  constructor(private authService: AuthService) {}
+
   submit() {
-    alert(this.form);
+    this.authService.login(this.form);
+  }
+
+  isLoading() {
+    return this.authService.isLoading;
   }
 }
